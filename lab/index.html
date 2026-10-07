@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-page="lab">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -10,7 +10,9 @@
     <meta name="theme-color" content="#302a3b" />
     <title>MMX Lab | Dr. Muhammad Shahid Iqbal Malik</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="../assets/site.css" />
+    
+    
+      <link rel="stylesheet" href="../assets/site.css" />
     <script src="../assets/site.js" defer></script>
   </head>
   <body id="top">
@@ -23,9 +25,7 @@
           aria-label="Dr. Muhammad Shahid Iqbal Malik home"
           ><span class="brand-mark" aria-hidden="true">MSI</span
           ><span class="brand-name"
-            ><strong>Dr. Shahid Iqbal Malik</strong><br /><small
-              >Associate Professor · PAF-IAST</small
-            ></span
+            ><strong>M. Shahid Iqbal Malik</strong></span
           ></a
         ><button
           class="menu-toggle"
@@ -37,12 +37,13 @@
           Menu <span aria-hidden="true">☰</span>
         </button>
         <nav id="main-nav" aria-label="Main navigation">
-          <a href="../">Home</a><a href="../research/">Research</a
-          ><a href="../publications/">Publications</a
-          ><a href="../lab/" aria-current="page">MMX Lab</a
+          <a href="../">Home</a
+          ><a href="../research/">Research</a
+          ><a href="../publications/">Publications</a><a href="../lab/" aria-current="page">MMX Lab</a
           ><a href="../teaching/">Teaching</a><a href="../service/">Service</a
           ><a href="../cv/">CV</a
-          ><a href="../contact/" class="nav-contact">Contact ↗</a>
+          >
+          <a href="mailto:shahid.msimalik@gmail.com" class="nav-contact">Contact ↗</a>
         </nav>
       </div>
     </header>
@@ -57,7 +58,7 @@
           </div>
           <div class="mmx-lab-hero-grid">
             <div>
-              <h1>MMX <em>Lab.</em></h1>
+              <h1>MMX Lab</h1>
               <h2 class="mmx-lab-subtitle">
                 Multilingual, Multimodal<br />and Explainable AI
               </h2>
@@ -289,10 +290,11 @@
               </div>
             </div>
           </div>
-          <div class="mmx-lab-principle">
+          <!-- <div class="mmx-lab-principle">
             <span>Formerly the Multimodal and Multilingual AI group</span
-            ><strong>Inspected. Questioned. Defended.</strong>
-          </div>
+            >
+            <strong>Inspected. Questioned. Defended.</strong>
+          </div> -->
         </div>
       </section>
       <section class="mmx-section">
@@ -300,9 +302,8 @@
           <div>
             <p class="mmx-label1">Our perspective</p>
             <h2>
-              Understanding<br />is part of<br /><span class="mmx-tagline"
-                >the design.</span
-              >
+              Understanding<br />is part of<br />the design
+              
             </h2>
           </div>
           <div>
@@ -313,12 +314,12 @@
             </p>
             <p class="mmx-small-copy">
               I lead the MMX Lab, formerly the Multimodal and Multilingual AI
-              group.<br />- Dr. Muhammad Shahid Iqbal Malik
+              group.
             </p>
           </div>
         </div>
       </section>
-      <section id="research" class="mmx-section" style="padding-top: 0">
+      <!-- <section id="research" class="mmx-section" style="padding-top: 0">
         <div class="container">
           <div class="mmx-research">
             <div class="mmx-section-head">
@@ -380,10 +381,12 @@
                   structures.
                 </p>
                 <div class="mmx-pillar-tags">
-                  <span class="mmx-pill">LIME &amp; SHAP</span
-                  ><span class="mmx-pill">Attention analysis</span
-                  ><span class="mmx-pill">Neuro-symbolic AI</span>
+                  <span class="mmx-pill">Grad-CAM, SHAP &amp; attention</span>
+                  <span class="mmx-pill">Neuro-symbolic reasoning</span>
+                  <span class="mmx-pill">Interpretable deep learning</span>
+                  <span class="mmx-pill">AMR &amp; pattern structures</span>
                 </div>
+
               </div>
               <aside class="mmx-panel-aside">
                 <p class="mmx-label">Questions &amp; methods</p>
@@ -413,9 +416,10 @@
                   changes.
                 </p>
                 <div class="mmx-pillar-tags">
-                  <span class="mmx-pill">Cross-lingual transfer</span
-                  ><span class="mmx-pill">Nastaliq Urdu</span
-                  ><span class="mmx-pill">Evaluation</span>
+                  <span class="mmx-pill">Nastaliq Urdu NLP</span>
+                  <span class="mmx-pill">Cross-lingual transfer</span>
+                  <span class="mmx-pill">Multilingual transformers</span>
+                  <span class="mmx-pill">Contextual embeddings</span>
                 </div>
               </div>
               <aside class="mmx-panel-aside">
@@ -445,11 +449,12 @@
                   prototypes under external grants, built by supervised student
                   teams.
                 </p>
-                <div class="mmx-pillar-tags">
-                  <span class="mmx-pill">Vision–language models</span
-                  ><span class="mmx-pill">Applied AI</span
-                  ><span class="mmx-pill">Working prototypes</span>
-                </div>
+              <div class="mmx-pillar-tags">
+                <span class="mmx-pill">Vision–language models</span>
+                <span class="mmx-pill">Cross-modal learning</span>
+                <span class="mmx-pill">Multimodal classification</span>
+                <span class="mmx-pill">Multimodal hate-speech detection</span>
+              </div>
               </div>
               <aside class="mmx-panel-aside">
                 <p class="mmx-label">Questions &amp; methods</p>
@@ -463,18 +468,219 @@
             </div>
           </div>
         </div>
+      </section> -->
+      <section id="research" class="mmx-section" data-inline-style="lab-4">
+        <div class="container">
+          <div class="mmx-research">
+            <div class="mmx-section-head">
+              <div>
+                <p class="mmx-label">What we work on</p>
+                <h2>Four directions.<br />One shared question.</h2>
+              </div>
+              <p>
+                How do we build AI whose behaviour we can understand across
+                languages, language models, modalities and applications?
+              </p>
+            </div>
+
+            <div class="mmx-tabs" role="tablist" aria-label="Research areas">
+              <button
+                class="mmx-tab"
+                id="tab-language"
+                role="tab"
+                aria-selected="false"
+                aria-controls="panel-language"
+                type="button"
+              >
+                Multilingual
+              </button>
+              <button
+                class="mmx-tab"
+                id="tab-multimodal"
+                role="tab"
+                aria-selected="false"
+                aria-controls="panel-multimodal"
+                type="button"
+              >
+                Multimodal
+              </button>
+
+              <button
+                class="mmx-tab"
+                id="tab-xai"
+                role="tab"
+                aria-selected="true"
+                aria-controls="panel-xai"
+                type="button"
+              >
+                Explainable AI
+              </button>
+              <button
+                class="mmx-tab"
+                id="tab-llm"
+                role="tab"
+                aria-selected="false"
+                aria-controls="panel-llm"
+                type="button"
+              >
+                LLMs
+              </button>
+            </div>
+
+            <div
+              class="mmx-panel"
+              role="tabpanel"
+              id="panel-xai"
+              aria-labelledby="tab-xai"
+              tabindex="0"
+            >
+              <div>
+                <h3>Explainable AI</h3>
+                <p>
+                  We treat interpretability as a design requirement rather than
+                  an afterthought. Our work spans post-hoc methods such as LIME,
+                  SHAP and attention analysis, and architectures that are
+                  explainable by construction, including neuro-symbolic
+                  approaches using abstract meaning representation and pattern
+                  structures.
+                </p>
+                <div class="mmx-pillar-tags">
+                  <span class="mmx-pill">Grad-CAM, SHAP &amp; attention</span>
+                  <span class="mmx-pill">Neuro-symbolic reasoning</span>
+                  <span class="mmx-pill">Interpretable deep learning</span>
+                  <span class="mmx-pill">AMR &amp; pattern structures</span>
+                </div>
+              </div>
+              <aside class="mmx-panel-aside">
+                <p class="mmx-label">Questions &amp; methods</p>
+                <ul>
+                  <li>Post-hoc model explanations</li>
+                  <li>Abstract meaning representation</li>
+                  <li>Pattern structures</li>
+                  <li>Explainable-by-construction architectures</li>
+                </ul>
+              </aside>
+            </div>
+
+            <div
+              class="mmx-panel"
+              role="tabpanel"
+              id="panel-language"
+              aria-labelledby="tab-language"
+              tabindex="0"
+            >
+              <div>
+                <h3>Multilingual and low-resource language technology</h3>
+                <p>
+                  Most of what the field knows about model behaviour was learned
+                  on English. We study what changes when it does not hold:
+                  cross-lingual transfer, pretrained models meeting
+                  under-represented scripts such as Nastaliq Urdu, and whether
+                  standard evaluation protocols stay valid once the language
+                  changes.
+                </p>
+                <div class="mmx-pillar-tags">
+                  <span class="mmx-pill">Nastaliq Urdu NLP</span>
+                  <span class="mmx-pill">Cross-lingual transfer</span>
+                  <span class="mmx-pill">Multilingual transformers</span>
+                  <span class="mmx-pill">Contextual embeddings</span>
+                </div>
+              </div>
+              <aside class="mmx-panel-aside">
+                <p class="mmx-label">Questions &amp; methods</p>
+                <ul>
+                  <li>Learning across languages</li>
+                  <li>Under-represented scripts</li>
+                  <li>Pretrained language models</li>
+                  <li>Evaluation across language settings</li>
+                </ul>
+              </aside>
+            </div>
+
+            <div
+              class="mmx-panel"
+              role="tabpanel"
+              id="panel-multimodal"
+              aria-labelledby="tab-multimodal"
+              tabindex="0"
+            >
+              <div>
+                <h3>Multimodal and applied AI</h3>
+                <p>
+                  We work on problems with a real cost attached, harmful
+                  content and hate speech detection, mental-health signals,
+                  damage assessment from social media, product-defect
+                  identification. Several of these were delivered as working
+                  prototypes under external grants, built by supervised student
+                  teams.
+                </p>
+                <div class="mmx-pillar-tags">
+                  <span class="mmx-pill">Vision–language models</span>
+                  <span class="mmx-pill">Cross-modal learning</span>
+                  <span class="mmx-pill">Multimodal classification</span>
+                  <span class="mmx-pill">Multimodal hate-speech detection</span>
+                </div>
+              </div>
+              <aside class="mmx-panel-aside">
+                <p class="mmx-label">Questions &amp; methods</p>
+                <ul>
+                  <li>Harmful content &amp; hate speech</li>
+                  <li>Mental-health signals</li>
+                  <li>Social-media damage assessment</li>
+                  <li>Product-defect identification</li>
+                </ul>
+              </aside>
+            </div>
+
+            <div
+              class="mmx-panel"
+              role="tabpanel"
+              id="panel-llm"
+              aria-labelledby="tab-llm"
+              tabindex="0"
+            >
+              <div>
+                <h3>Large Language Models</h3>
+                <p>
+                  We explore how large language models can be adapted for
+                  low-resource language understanding and generation through
+                  fine-tuning, prompt engineering and knowledge infusion.
+                  Current supervised research includes explainable text
+                  detoxification for Nastaliq Urdu, examining how models can
+                  reduce harmful language while preserving meaning and making
+                  their outputs easier to evaluate.
+                </p>
+                <div class="mmx-pillar-tags">
+                  <span class="mmx-pill">LLM fine-tuning</span>
+                  <span class="mmx-pill">Prompt engineering</span>
+                  <span class="mmx-pill">Knowledge infusion</span>
+                  <span class="mmx-pill">Explainable text detoxification</span>
+                </div>
+              </div>
+              <aside class="mmx-panel-aside">
+                <p class="mmx-label">Questions &amp; methods</p>
+                <ul>
+                  <li>Adapting LLMs to low-resource languages</li>
+                  <li>Fine-tuning and knowledge-infused modelling</li>
+                  <li>Explanation-guided text detoxification</li>
+                  <li>Evaluating toxicity, fluency and meaning preservation</li>
+                </ul>
+              </aside>
+            </div>
+          </div>
+        </div>
       </section>
-      <section id="people" class="mmx-section" style="padding-top: 0">
+      <section id="people" class="mmx-section" data-inline-style="lab-5">
         <div class="container">
           <div class="mmx-section-head">
             <div>
               <p class="mmx-label1">The people behind the work</p>
               <h2>
-                A lab built on<br /><span class="mmx-tagline">curiosity.</span>
+                A lab built on<br />curiosity
               </h2>
             </div>
             <p>
-              Our current research assistants work alongside Dr. Shahid Iqbal
+              Our current research assistants work alongside Muhammad Shahid Iqbal
               Malik on the lab’s research.
             </p>
           </div>
@@ -490,10 +696,6 @@
             <div>
               <p class="mmx-label1">Lab Lead</p>
               <h3>Dr. Muhammad Shahid Iqbal Malik</h3>
-              <p>
-                Associate Professor of Computer Science at PAF-IAST. Research in
-                explainable NLP, multilingual learning and multimodal models.
-              </p>
               <div class="mmx-actions">
                 <a class="text-link" href="../about/">Academic profile ↗</a
                 ><a class="text-link" href="../publications/">Publications ↗</a>
@@ -526,7 +728,7 @@
         <div class="container mmx-open-grid">
           <div>
             <p class="mmx-label1">Open research</p>
-            <h2>Built to be<br /><span class="mmx-tagline">examined.</span></h2>
+            <h2>Built to be<br />examined</h2>
             <p>
               Our code and datasets are released openly. Explore the
               repositories, work with the data, and build on the research.
@@ -546,9 +748,6 @@
               rel="noopener noreferrer"
               >github.com/MSIMALIK ↗</a
             >
-            <p>
-              Openly released research code and datasets from Dr. Malik’s work.
-            </p>
             <a
               class="text-link"
               href="https://github.com/MSIMALIK"
@@ -565,9 +764,7 @@
             <div>
               <p class="mmx-label">Join us</p>
               <h2>
-                Good research<br />starts with<br /><span class="mmx-tagline"
-                  >a conversation.</span
-                >
+                Good research<br />starts with<br />a conversation
               </h2>
             </div>
             <div>
@@ -592,24 +789,40 @@
     <footer>
       <div class="container footer-grid">
         <div>
-          <strong>Dr. Muhammad Shahid Iqbal Malik</strong>
+          <strong>Muhammad Shahid Iqbal Malik</strong>
           <p>
-            Associate Professor · Computer Science<br />PAF-IAST · Haripur,
+            Associate Professor · Multimodal & Multilingual AI<br />PAF-IAST · Haripur,
             Pakistan
           </p>
         </div>
         <div>
-          <a href="../lab/">MMX Lab ↗</a
-          ><a
+
+          <a
             href="https://scholar.google.com/citations?user=S2JLYhMAAAAJ&amp;hl=en"
             target="_blank"
             rel="noopener noreferrer"
             >Google Scholar ↗</a
-          ><a href="../cv/">CV</a><a href="../contact/">Contact</a>
+          >
+          <a
+            href="https://www.linkedin.com/in/muhammad-shahid-iqbal-malik-b5541316/?isSelfProfile=false"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn ↗</a
+          >
+          <a
+            href="https://orcid.org/0000-0001-8396-3344"
+            target="_blank"
+            rel="noopener noreferrer"
+            >ORCID ↗</a
+          >
+
+          <a class="email-link" href="mailto:shahid.msimalik@gmail.com"
+              ><u>shahid.msimalik@gmail.com</u> <span aria-hidden="true">↗</span></a
+            >
         </div>
       </div>
       <div class="container footer-inner">
-        <p>© <span id="year">2026</span> Dr. Muhammad Shahid Iqbal Malik</p>
+        <p>© <span id="year">2026</span> Muhammad Shahid Iqbal Malik</p>
         <a href="#top">Back to top ↑</a>
       </div>
     </footer>

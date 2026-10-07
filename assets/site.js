@@ -1010,9 +1010,144 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 })();
 
 
+
+/* Research publication filters. */
+(() => {
+  if (document.documentElement.dataset.page !== "research") return;
+        "use strict";
+        const section = document.querySelector("#publications");
+        if (!section) return;
+        const bar = section.querySelector(".filter-bar");
+        if (!bar) return;
+        const buttons = [...bar.querySelectorAll("[data-filter]")];
+        const papers = [...section.querySelectorAll(".paper")];
+        const count = section.querySelector(".result-count");
+        const apply = (category) => {
+          let visible = 0;
+          papers.forEach((paper) => {
+            const match =
+              category === "all" ||
+              paper.dataset.categories.split(/\s+/).includes(category);
+            paper.hidden = !match;
+            if (match) visible++;
+          });
+          buttons.forEach((button) =>
+            button.setAttribute(
+              "aria-pressed",
+              String(button.dataset.filter === category),
+            ),
+          );
+          const selected = buttons.find(
+            (button) => button.dataset.filter === category,
+          );
+          count.textContent =
+            category === "all"
+              ? `Showing all ${papers.length} publications`
+              : `Showing ${visible} of ${papers.length} publications · ${selected.textContent}`;
+          if (window.mmxSmoothScroll) window.mmxSmoothScroll.resize();
+        };
+        bar.hidden = false;
+        buttons.forEach((button) =>
+          button.addEventListener("click", () => apply(button.dataset.filter)),
+        );
+        apply("all");
+      })();
+/* Full publication catalog filters. */
+
+      /* Publication category buttons are scoped to this page; other page scripts remain untouched. */
+      (() => {
+        "use strict";
+        const catalog = document.querySelector("#publications.pub-catalog");
+        if (!catalog) return;
+        const bar = catalog.querySelector(".pub-filter-bar");
+        const buttons = [...bar.querySelectorAll("[data-filter]")];
+        const papers = [...catalog.querySelectorAll(".pub-entry")];
+        const count = catalog.querySelector("#pub-result-count");
+        const empty = catalog.querySelector("#pub-empty");
+        const filter = (category) => {
+          let visible = 0;
+          papers.forEach((paper) => {
+            const matches =
+              category === "all" ||
+              paper.dataset.categories.split(/\s+/).includes(category);
+            paper.hidden = !matches;
+            if (matches) visible++;
+          });
+          buttons.forEach((button) => {
+            const active = button.dataset.filter === category;
+            button.classList.toggle("is-active", active);
+            button.setAttribute("aria-pressed", String(active));
+          });
+          const selected = buttons.find(
+            (button) => button.dataset.filter === category,
+          );
+          count.textContent =
+            category === "all"
+              ? `Showing all ${papers.length} publications`
+              : `Showing ${visible} of ${papers.length} publications · ${selected.textContent}`;
+          empty.hidden = visible !== 0;
+        };
+        bar.hidden = false;
+        buttons.forEach((button) =>
+          button.addEventListener("click", () => filter(button.dataset.filter)),
+        );
+        filter("all");
+      })();
+    
+(() => {
+  if (document.documentElement.dataset.page !== "research") return;
+        if (typeof Lenis !== "function") return;
+        const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+        let smooth;
+        const update = () => {
+          if (smooth) {
+            smooth.destroy();
+            smooth = null;
+            window.mmxSmoothScroll = null;
+          }
+          if (motion.matches) return;
+          smooth = new Lenis({
+            autoRaf: true,
+            lerp: 0.085,
+            smoothWheel: true,
+            syncTouch: false,
+            anchors: { offset: -108 },
+            allowNestedScroll: true,
+            respectReducedMotion: true,
+          });
+          window.mmxSmoothScroll = smooth;
+        };
+        motion.addEventListener("change", update);
+        update();
+        window.addEventListener("beforeprint", () => {
+          if (smooth) smooth.stop();
+        });
+        window.addEventListener("afterprint", () => {
+          if (smooth) {
+            smooth.start();
+            smooth.resize();
+          }
+        });
+      })();
+
+/* Original scrolling settings on CV, service and teaching pages. */
+(() => {
+  if (!['cv','service','teaching'].includes(document.documentElement.dataset.page)) return;
+  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let smoothScroll;
+  function configureScroll() {
+    if (smoothScroll) { smoothScroll.destroy(); smoothScroll = undefined; }
+    if (!motion.matches && typeof Lenis !== 'undefined')
+      smoothScroll = new Lenis({ autoRaf: true, anchors: true });
+  }
+  configureScroll();
+  motion.addEventListener('change', configureScroll);
+})();
+
 /* Lenis smooth scrolling: shared by every page, without changing page content. */
 (() => {
   'use strict';
+  if (['research','cv','service','teaching'].includes(document.documentElement.dataset.page)) return;
   if (typeof Lenis !== 'function') return;
   const smoothScroll = new Lenis({
     autoRaf: true,

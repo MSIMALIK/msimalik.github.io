@@ -1,1542 +1,723 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" id="top" data-page="research">
   <head>
-    <!-- Self-contained page: all CSS, JavaScript and images are embedded. Preserve this folder structure for clean page URLs. -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#173047" />
     <meta
       name="description"
-      content="Personal academic website of Dr. Muhammad Shahid Iqbal Malik, Associate Professor of Computer Science at PAF-IAST. Research, publications, teaching, academic service, CV and contact information."
+      content="Research by Dr. Muhammad Shahid Iqbal Malik: explainable AI, multilingual and low-resource NLP, language models, multimodal learning and funded research at MMX Lab."
     />
-    <meta name="theme-color" content="#302a3b">
     <title>Research | Dr. Muhammad Shahid Iqbal Malik</title>
-    <style>
-      /* Palette, type and spacing can be customized here. No external dependencies. */
-      :root {
-        --navy: #102740;
-        --ink: #142d44;
-        --muted: #536577;
-        --blue: #175bcc;
-        --pale: #eef4fa;
-        --line: #d8e2ec;
-        --white: #fff;
-        --container: 1160px;
-      }
-      * {
-        box-sizing: border-box;
-      }
-      html {
-        scroll-behavior: smooth;
-        scroll-padding-top: 110px;
-      }
-      body {
-        margin: 0;
-        color: var(--ink);
-        background: var(--white);
-        font:
-          16px/1.65 system-ui,
-          -apple-system,
-          BlinkMacSystemFont,
-          "Segoe UI",
-          sans-serif;
-      }
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-      a:hover {
-        color: var(--blue);
-      }
-      a:focus-visible,
-      button:focus-visible {
-        outline: 3px solid #377bee;
-        outline-offset: 5px;
-      }
-      button {
-        font: inherit;
-      }
-      img {
-        max-width: 100%;
-        display: block;
-      }
-      h1,
-      h2,
-      h3,
-      p {
-        margin: 0;
-      }
-      h1,
-      h2 {
-        font-family: Georgia, "Times New Roman", serif;
-        font-weight: 400;
-      }
-      h2 {
-        font-size: clamp(2rem, 4vw, 3.15rem);
-        line-height: 1.12;
-        letter-spacing: -0.035em;
-      }
-      h3 {
-        font-size: 1.22rem;
-        line-height: 1.35;
-      }
-      p + p {
-        margin-top: 1rem;
-      }
-      .container {
-        width: min(var(--container), calc(100% - 72px));
-        margin-inline: auto;
-      }
-      .skip-link {
-        position: fixed;
-        left: 16px;
-        top: -80px;
-        background: white;
-        padding: 12px;
-        z-index: 100;
-      }
-      .skip-link:focus {
-        top: 12px;
-      }
-      .site-header {
-        position: sticky;
-        top: 0;
-        z-index: 20;
-        border-bottom: 1px solid var(--line);
-        background: rgba(255, 255, 255, 0.97);
-      }
-      .header-inner {
-        min-height: 96px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 30px;
-      }
-      .brand {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-      }
-      .brand-mark {
-        font-size: 1.3rem;
-        font-weight: 750;
-        letter-spacing: -0.07em;
-        border: 1px solid #b8c9db;
-        display: grid;
-        grid-auto-flow: column;
-        align-items: center;
-        padding: 6px 9px;
-        height: 46px;
-      }
-      .brand-mark span {
-        color: var(--blue);
-        margin: 0 3px;
-        font-weight: 400;
-      }
-      .brand-name {
-        font-size: 0.86rem;
-        line-height: 1.35;
-      }
-      .brand-name strong {
-        font-weight: 650;
-      }
-      nav {
-        display: flex;
-        align-items: center;
-        gap: 27px;
-        font-size: 0.9rem;
-        font-weight: 550;
-      }
-      nav a {
-        padding: 10px 0;
-        white-space: nowrap;
-      }
-      nav a[aria-current="location"] {
-        color: var(--blue);
-        box-shadow: 0 2px var(--blue);
-      }
-      .nav-contact {
-        border-left: 1px solid var(--line);
-        padding-left: 25px;
-      }
-      button[hidden] {
-        display: none;
-      }
-      .menu-toggle {
-        background: transparent;
-        border: 1px solid var(--line);
-        padding: 8px 12px;
-        color: var(--ink);
-      }
-      .hero {
-        background: var(--pale);
-        overflow: hidden;
-      }
-      .hero-grid {
-        display: grid;
-        grid-template-columns: 1.4fr 0.75fr;
-        gap: 100px;
-        padding-block: 75px 60px;
-        align-items: center;
-      }
-      .eyebrow {
-        font-size: 0.76rem;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        font-weight: 650;
-        color: var(--blue);
-        margin-bottom: 25px;
-      }
-      h1 {
-        font-size: clamp(3rem, 5.3vw, 4.6rem);
-        letter-spacing: -0.05em;
-        line-height: 1.07;
-      }
-      h1 em {
-        color: var(--blue);
-        font-weight: 400;
-      }
-      .title-dot {
-        color: var(--blue);
-      }
-      .hero-intro {
-        font-size: 1.2rem;
-        line-height: 1.5;
-        margin-top: 28px;
-      }
-      .hero-description {
-        font-size: 1rem;
-        color: var(--muted);
-        max-width: 560px;
-        margin-top: 18px;
-      }
-      .hero-actions {
-        display: flex;
-        align-items: center;
-        gap: 26px;
-        margin-top: 30px;
-        flex-wrap: wrap;
-      }
-      .button {
-        display: inline-flex;
-        align-items: center;
-        gap: 24px;
-        background: var(--blue);
-        color: white;
-        padding: 13px 19px;
-        font-size: 0.9rem;
-        font-weight: 550;
-        border: 1px solid var(--blue);
-        transition: background 0.18s;
-      }
-      .button:hover {
-        background: var(--navy);
-        color: white;
-      }
-      .text-link {
-        display: inline-block;
-        font-size: 0.9rem;
-        font-weight: 600;
-        border-bottom: 1px solid #9ab1cb;
-        padding-block: 4px;
-      }
-      .lead-portrait {
-        margin: 0;
-        max-width: 350px;
-      }
-      .portrait-frame {
-        position: relative;
-        border-radius: 2px;
-        overflow: hidden;
-        background: #dce4e9;
-      }
-      .portrait-frame img {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 538/650;
-        object-fit: cover;
-        object-position: 50% 24%;
-      }
-      .portrait-label {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        background: var(--navy);
-        color: white;
-        padding: 9px 17px;
-        font-size: 0.7rem;
-        letter-spacing: 0.16em;
-      }
-      .lead-portrait figcaption {
-        margin-top: 18px;
-      }
-      .lead-portrait figcaption a {
-        font-size: 1rem;
-        font-weight: 650;
-      }
-      .lead-portrait figcaption p {
-        color: var(--muted);
-        font-size: 0.84rem;
-        line-height: 1.6;
-        margin: 5px 0 0;
-      }
-      .hero-foot {
-        display: flex;
-        justify-content: space-between;
-        gap: 15px;
-        border-top: 1px solid #cbd8e7;
-        padding-block: 21px;
-        font-size: 0.7rem;
-        letter-spacing: 0.18em;
-        color: var(--muted);
-      }
-      .section {
-        padding-block: 90px;
-      }
-      .section-heading {
-        display: grid;
-        grid-template-columns: 1fr 0.75fr;
-        gap: 90px;
-        align-items: end;
-        margin-bottom: 44px;
-      }
-      .section-heading .eyebrow {
-        margin-bottom: 17px;
-      }
-      .section-heading > p,
-      .section-heading > div > p:not(.eyebrow) {
-        color: var(--muted);
-        max-width: 440px;
-      }
-      .section-heading .text-link {
-        margin-top: 16px;
-      }
-      .research-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        border-top: 1px solid var(--line);
-        border-left: 1px solid var(--line);
-      }
-      .research-card,
-      .research-note {
-        padding: 29px;
-        border-right: 1px solid var(--line);
-        border-bottom: 1px solid var(--line);
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .card-index {
-        font-size: 0.78rem;
-        color: var(--blue);
-        margin-bottom: 29px;
-      }
-      .research-card h3 {
-        margin-bottom: 13px;
-      }
-      .research-card p {
-        color: var(--muted);
-        font-size: 0.94rem;
-      }
-      .research-card .card-keywords {
-        font-size: 0.76rem;
-        margin-top: auto;
-        padding-top: 24px;
-        color: var(--blue);
-        line-height: 1.6;
-      }
-      .research-note {
-        background: var(--navy);
-        color: white;
-      }
-      .research-note .eyebrow {
-        color: #abc9fb;
-        margin-bottom: 18px;
-        font-size: 0.7rem;
-      }
-      .research-note h3 {
-        font-family: Georgia, serif;
-        font-size: 2.1rem;
-        font-weight: 400;
-      }
-      .research-note p:not(.eyebrow) {
-        font-size: 0.91rem;
-        color: #cedae7;
-        margin-top: 18px;
-      }
-      .research-note a {
-        font-size: 0.85rem;
-        margin-top: 24px;
-        border-bottom: 1px solid #71869d;
-      }
-      .research-note a:hover {
-        color: #abc9fb;
-      }
-      .publications-section {
-        background: #f6f8fb;
-      }
-      .publication-list {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        border-top: 1px solid #bdccdc;
-      }
-      .publication {
-        display: grid;
-        grid-template-columns: 85px 1fr;
-        gap: 32px;
-        padding: 26px 0;
-        border-bottom: 1px solid var(--line);
-      }
-      .pub-year {
-        font-family: Georgia, serif;
-        font-size: 1.6rem;
-        color: var(--muted);
-      }
-      .pub-venue {
-        font-size: 0.77rem;
-        color: var(--blue);
-        margin: 0 0 7px;
-      }
-      .publication h3 {
-        font-size: 1.12rem;
-        font-weight: 600;
-        max-width: 950px;
-      }
-      .publication h3 span {
-        color: var(--blue);
-        white-space: nowrap;
-      }
-      .authors {
-        font-size: 0.83rem;
-        color: var(--muted);
-        margin-top: 9px;
-      }
-      .pub-topic {
-        font-size: 0.73rem;
-        color: #536577;
-        margin-top: 9px;
-        letter-spacing: 0.025em;
-      }
-      .bio-grid {
-        display: grid;
-        grid-template-columns: 1.15fr 0.85fr;
-        gap: 90px;
-      }
-      .bio p {
-        color: var(--muted);
-      }
-      .bio .large-text {
-        font-family: Georgia, serif;
-        font-size: 1.65rem;
-        line-height: 1.4;
-        color: var(--ink);
-        margin-bottom: 20px;
-      }
-      .profile-links {
-        display: flex;
-        gap: 20px;
-        flex-wrap: wrap;
-        margin-top: 27px;
-        font-size: 0.85rem;
-        font-weight: 600;
-        color: var(--blue);
-      }
-      .experience {
-        border-left: 1px solid var(--line);
-        padding-left: 35px;
-      }
-      .experience h3 {
-        font-size: 1rem;
-        margin-bottom: 22px;
-      }
-      .experience ol {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-      .experience li {
-        position: relative;
-        padding: 0 0 21px 22px;
-        border-left: 1px solid var(--line);
-      }
-      .experience li:before {
-        content: "";
-        position: absolute;
-        left: -4px;
-        top: 7px;
-        width: 7px;
-        height: 7px;
-        background: var(--blue);
-      }
-      .experience span {
-        font-size: 0.75rem;
-        color: var(--blue);
-        display: block;
-        margin-bottom: 4px;
-      }
-      .experience strong {
-        font-size: 0.88rem;
-        font-weight: 600;
-        display: block;
-      }
-      .experience p {
-        font-size: 0.83rem;
-        color: var(--muted);
-        margin-top: 3px;
-      }
-      .research-record {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 25px;
-        border-top: 1px solid var(--line);
-        padding-top: 30px;
-        margin-top: 50px;
-      }
-      .research-record strong {
-        display: block;
-        font-family: Georgia, serif;
-        font-size: 2.6rem;
-        font-weight: 400;
-      }
-      .research-record span {
-        font-size: 0.84rem;
-        color: var(--muted);
-      }
-      .record-note {
-        font-size: 0.75rem;
-        color: var(--muted);
-        margin-top: 18px;
-      }
-      .teaching-section {
-        background: var(--pale);
-      }
-      .teaching-grid {
-        display: grid;
-        grid-template-columns: 1fr 1.1fr 1fr;
-        gap: 38px;
-      }
-      .teaching-grid h3 {
-        font-size: 1rem;
-      }
-      .teaching-grid p,
-      .teaching-grid li {
-        font-size: 0.9rem;
-        color: var(--muted);
-      }
-      .teaching-grid ul {
-        padding-left: 19px;
-        margin: 15px 0 27px;
-      }
-      .teaching-grid li {
-        margin-bottom: 8px;
-      }
-      .teaching-grid p {
-        margin-top: 14px;
-      }
-      .teaching-grid .muted {
-        font-size: 0.76rem;
-      }
-      .contact-section {
-        background: var(--navy);
-        color: white;
-        padding-block: 75px;
-      }
-      .contact-grid {
-        display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 110px;
-      }
-      .contact-section .eyebrow {
-        color: #a9c7f7;
-      }
-      .contact-section h2 {
-        font-size: 3.3rem;
-      }
-      .contact-section p:not(.eyebrow):not(.contact-label) {
-        color: #c6d4e2;
-        margin-top: 24px;
-        max-width: 500px;
-      }
-      .contact-details {
-        padding-top: 9px;
-      }
-      .contact-label {
-        color: #a9c7f7;
-        font-size: 0.71rem;
-        letter-spacing: 0.14em;
-        margin-bottom: 14px;
-      }
-      .email-link {
-        font-size: 1.15rem;
-        border-bottom: 1px solid #6b7e94;
-        padding-bottom: 7px;
-        display: inline-block;
-        overflow-wrap: anywhere;
-      }
-      .contact-details .contact-label:not(:first-child) {
-        margin-top: 37px;
-      }
-      .contact-details p:not(.contact-label) {
-        font-size: 0.91rem;
-        margin-top: 0 !important;
-      }
-      .contact-details > a:last-child {
-        display: inline-block;
-        font-size: 0.85rem;
-        margin-top: 18px;
-      }
-      .contact-section a:hover {
-        color: #aacbff;
-      }
-      footer {
-        background: var(--navy);
-        color: #c6d4e2;
-      }
-      .footer-inner {
-        border-top: 1px solid #354a61;
-        padding-block: 23px;
-        display: flex;
-        justify-content: space-between;
-        gap: 24px;
-        font-size: 0.75rem;
-      }
-      footer a:hover {
-        color: white;
-      }
-      @media (min-width: 901px) {
-        .menu-toggle {
-          display: none;
-        }
-      }
-      @media (max-width: 1050px) {
-        .hero-grid {
-          gap: 50px;
-        }
-        .header-inner {
-          gap: 20px;
-        }
-        nav {
-          gap: 18px;
-        }
-        .brand-name {
-          font-size: 0.75rem;
-        }
-        .nav-contact {
-          padding-left: 17px;
-        }
-        .section-heading,
-        .bio-grid {
-          gap: 45px;
-        }
-        .contact-grid {
-          gap: 55px;
-        }
-      }
-      @media (max-width: 900px) {
-        .container {
-          width: calc(100% - 48px);
-        }
-        .header-inner {
-          min-height: 82px;
-          flex-wrap: wrap;
-          padding-block: 14px;
-        }
-        .brand-name {
-          font-size: 0.82rem;
-        }
-        nav {
-          width: 100%;
-          flex-wrap: wrap;
-          gap: 22px;
-          padding: 5px 0 8px;
-        }
-        .js nav {
-          display: none;
-        }
-        .js nav.is-open {
-          display: flex;
-        }
-        .nav-contact {
-          border-left: 0;
-          padding-left: 0;
-        }
-        .hero-grid {
-          padding-block: 55px 42px;
-          grid-template-columns: 1.2fr 0.8fr;
-          gap: 30px;
-        }
-        h1 {
-          font-size: 3.2rem;
-        }
-        .hero-actions {
-          gap: 16px;
-        }
-        .lead-portrait figcaption a {
-          font-size: 0.9rem;
-        }
-        .hero-foot {
-          font-size: 0.63rem;
-          letter-spacing: 0.09em;
-        }
-        .research-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        .section {
-          padding-block: 65px;
-        }
-        .section-heading {
-          gap: 30px;
-        }
-        .teaching-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-        .teaching-grid article:last-child {
-          grid-column: 1/-1;
-          border-top: 1px solid #cbd8e7;
-          padding-top: 25px;
-        }
-        .contact-grid {
-          gap: 35px;
-        }
-        .email-link {
-          font-size: 1rem;
-        }
-      }
-      @media (max-width: 600px) {
-        .container {
-          width: calc(100% - 36px);
-        }
-        html {
-          scroll-padding-top: 95px;
-        }
-        .brand-mark {
-          font-size: 1.05rem;
-          height: 40px;
-        }
-        .brand-name {
-          font-size: 0.72rem;
-        }
-        .brand {
-          gap: 9px;
-        }
-        .menu-toggle {
-          font-size: 0.8rem;
-        }
-        .header-inner {
-          gap: 10px;
-          min-height: 75px;
-        }
-        nav {
-          gap: 8px 20px;
-          font-size: 0.84rem;
-        }
-        .hero-grid {
-          grid-template-columns: 1fr;
-          gap: 37px;
-          padding-top: 40px;
-        }
-        .hero h1 {
-          font-size: clamp(2.7rem, 10vw, 3.6rem);
-        }
-        .eyebrow {
-          margin-bottom: 20px;
-        }
-        .hero-intro {
-          font-size: 1.1rem;
-        }
-        .hero-description {
-          font-size: 0.95rem;
-        }
-        .hero-actions {
-          align-items: flex-start;
-          gap: 15px;
-        }
-        .lead-portrait {
-          max-width: none;
-          display: grid;
-          grid-template-columns: 120px 1fr;
-          gap: 18px;
-          align-items: center;
-        }
-        .portrait-frame img {
-          aspect-ratio: 1/1.15;
-        }
-        .portrait-label {
-          font-size: 0.5rem;
-          padding: 4px 8px;
-          letter-spacing: 0.06em;
-        }
-        .lead-portrait figcaption {
-          margin: 0;
-        }
-        .lead-portrait figcaption p {
-          font-size: 0.74rem;
-        }
-        .hero-foot {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 11px;
-          padding-block: 17px;
-        }
-        .section {
-          padding-block: 50px;
-        }
-        .section-heading {
-          grid-template-columns: 1fr;
-          gap: 20px;
-          margin-bottom: 30px;
-        }
-        .section-heading h2 {
-          font-size: 2.4rem;
-        }
-        .section-heading > p,
-        .section-heading > div > p:not(.eyebrow) {
-          font-size: 0.95rem;
-        }
-        .research-grid {
-          grid-template-columns: 1fr;
-        }
-        .research-card,
-        .research-note {
-          padding: 25px;
-        }
-        .card-index {
-          margin-bottom: 14px;
-        }
-        .research-card .card-keywords {
-          padding-top: 17px;
-        }
-        .research-note h3 br {
-          display: none;
-        }
-        .publication {
-          grid-template-columns: 46px 1fr;
-          gap: 13px;
-          padding-block: 23px;
-        }
-        .pub-year {
-          font-size: 1.2rem;
-        }
-        .pub-venue {
-          font-size: 0.72rem;
-        }
-        .publication h3 {
-          font-size: 1.02rem;
-        }
-        .authors {
-          font-size: 0.77rem;
-        }
-        .bio-grid {
-          grid-template-columns: 1fr;
-          gap: 35px;
-        }
-        .experience {
-          padding-left: 22px;
-        }
-        .research-record {
-          grid-template-columns: 1fr 1fr;
-          gap: 18px;
-          margin-top: 30px;
-        }
-        .research-record span {
-          font-size: 0.8rem;
-        }
-        .teaching-grid {
-          grid-template-columns: 1fr;
-          gap: 25px;
-        }
-        .teaching-grid article:last-child {
-          grid-column: auto;
-        }
-        .teaching-grid ul {
-          margin-bottom: 20px;
-        }
-        .contact-grid {
-          grid-template-columns: 1fr;
-          gap: 35px;
-        }
-        .contact-section {
-          padding-block: 50px;
-        }
-        .contact-section h2 {
-          font-size: 2.7rem;
-        }
-        .email-link {
-          font-size: 1rem;
-        }
-        .footer-inner {
-          flex-direction: column;
-          gap: 10px;
-        }
-        .profile-links {
-          gap: 16px;
-        }
-      }
-      @media (prefers-reduced-motion: reduce) {
-        html {
-          scroll-behavior: auto;
-        }
-        * {
-          transition: none !important;
-        }
-      }
-      @media print {
-        .site-header,
-        .hero-actions,
-        .hero-foot,
-        .menu-toggle,
-        .footer-inner a {
-          display: none;
-        }
-        body {
-          font-size: 11pt;
-        }
-        .container {
-          width: 100%;
-        }
-        .section,
-        .contact-section {
-          padding-block: 25px;
-        }
-        .hero-grid {
-          padding-block: 20px;
-        }
-        .publication,
-        .research-card {
-          break-inside: avoid;
-        }
-        .contact-section,
-        footer,
-        .research-note {
-          background: white;
-          color: #142d44;
-        }
-        .contact-section p,
-        .research-note p {
-          color: #536577 !important;
-        }
-        a {
-          color: inherit;
-        }
-        h1 {
-          font-size: 34pt;
-        }
-      }
-
-      /* Dedicated-page layouts and shared navigation. */
-      body {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-      }
-      main {
-        flex: 1;
-      }
-      nav {
-        gap: 17px;
-        font-size: 0.85rem;
-      }
-      .header-inner {
-        gap: 20px;
-      }
-      nav a[aria-current="page"] {
-        color: var(--blue);
-        box-shadow: 0 2px var(--blue);
-      }
-      .page-title {
-        font-size: clamp(2rem, 4vw, 3.15rem);
-        line-height: 1.12;
-        letter-spacing: -0.035em;
-      }
-      .page-intro {
-        padding: 65px 0;
-        background: var(--pale);
-        border-bottom: 1px solid var(--line);
-      }
-      .page-intro h1 {
-        font-size: clamp(2.7rem, 5vw, 4rem);
-        max-width: 880px;
-      }
-      .page-description {
-        font-size: 1.08rem;
-        color: var(--muted);
-        max-width: 720px;
-        margin-top: 22px;
-      }
-      .overview-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        border: 1px solid var(--line);
-      }
-      .overview-grid > a {
-        padding: 30px;
-        display: flex;
-        flex-direction: column;
-      }
-      .overview-grid > a + a {
-        border-left: 1px solid var(--line);
-      }
-      .overview-grid span {
-        font-size: 0.8rem;
-        color: var(--blue);
-        margin-bottom: 20px;
-      }
-      .overview-grid h3 {
-        font-size: 1.2rem;
-      }
-      .overview-grid p {
-        color: var(--muted);
-        font-size: 0.95rem;
-        margin-top: 15px;
-      }
-      .overview-grid strong {
-        color: var(--blue);
-        font-size: 0.9rem;
-        margin-top: auto;
-        padding-top: 25px;
-        font-weight: 600;
-      }
-      .overview-grid a:hover {
-        background: var(--pale);
-      }
-      .home-cta {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 30px;
-      }
-      .two-column,
-      .contact-followup {
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 75px;
-      }
-      .contact-followup p {
-        margin-top: 18px;
-        color: var(--muted);
-      }
-      .inquiry-panel {
-        padding: 30px;
-        background: var(--pale);
-        align-self: start;
-      }
-      .inquiry-panel p:not(.eyebrow) {
-        margin-top: 20px;
-        color: var(--muted);
-      }
-      .inquiry-panel .button {
-        margin-top: 25px;
-      }
-      .spaced-list {
-        list-style: none;
-        padding: 0;
-        margin: 25px 0;
-      }
-      .spaced-list li {
-        padding: 17px 0;
-        border-bottom: 1px solid var(--line);
-      }
-      .spaced-list p {
-        color: var(--muted);
-        margin-top: 6px;
-      }
-      .service-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 40px;
-      }
-      .service-grid h2 {
-        font-size: 1.7rem;
-      }
-      .service-grid p {
-        margin-top: 20px;
-        color: var(--muted);
-      }
-      .service-grid .spaced-list p {
-        margin-top: 5px;
-      }
-      .talk-list {
-        list-style: none;
-        margin: 30px 0 0;
-        padding: 0;
-      }
-      .talk-list li {
-        padding: 24px 0;
-        border-top: 1px solid var(--line);
-      }
-      .talk-list span {
-        color: var(--blue);
-        font-size: 0.85rem;
-      }
-      .talk-list h3 {
-        margin-top: 8px;
-        font-weight: 550;
-      }
-      .cv-actions {
-        padding-block: 25px;
-        display: flex;
-        gap: 24px;
-        align-items: center;
-        border-bottom: 1px solid var(--line);
-      }
-      .cv-actions p {
-        color: var(--muted);
-        font-size: 0.85rem;
-      }
-      .print-button {
-        cursor: pointer;
-      }
-      .cv-layout {
-        display: grid;
-        grid-template-columns: 220px 1fr;
-        gap: 60px;
-        padding-block: 50px 80px;
-      }
-      .cv-nav {
-        position: sticky;
-        top: 120px;
-        align-self: start;
-      }
-      .cv-nav h2 {
-        font-family: inherit;
-        font-size: 0.88rem;
-        font-weight: 650;
-        margin-bottom: 15px;
-      }
-      .cv-nav a {
-        display: block;
-        font-size: 0.88rem;
-        color: var(--muted);
-        padding: 7px 0;
-      }
-      .cv-nav a:hover {
-        color: var(--blue);
-      }
-      .cv-section {
-        padding-bottom: 32px;
-        margin-bottom: 32px;
-        border-bottom: 1px solid var(--line);
-        scroll-margin-top: 115px;
-      }
-      .cv-section h2 {
-        font-size: 1.9rem;
-        margin-bottom: 22px;
-      }
-      .cv-section h3 {
-        font-size: 1.05rem;
-        margin-top: 23px;
-        margin-bottom: 10px;
-      }
-      .cv-section p,
-      .cv-section li {
-        color: var(--muted);
-      }
-      .cv-section strong {
-        color: var(--ink);
-      }
-      .cv-section > ol:not(.cv-bibliography) {
-        padding-left: 20px;
-      }
-      .cv-section > ol:not(.cv-bibliography) li {
-        margin-bottom: 15px;
-      }
-      .cv-section > ol:not(.cv-bibliography) span,
-      .cv-section > ol:not(.cv-bibliography) strong {
-        display: block;
-      }
-      .cv-section > ol:not(.cv-bibliography) span {
-        color: var(--blue);
-        font-size: 0.86rem;
-      }
-      .cv-section > ol:not(.cv-bibliography) p {
-        margin-top: 3px;
-      }
-      .cv-bibliography {
-        padding-left: 22px;
-      }
-      .cv-bibliography li {
-        margin-bottom: 18px;
-        padding-left: 6px;
-        font-size: 0.94rem;
-        overflow-wrap: anywhere;
-      }
-      .footer-grid {
-        display: flex;
-        justify-content: space-between;
-        gap: 30px;
-        padding-block: 35px;
-      }
-      .footer-grid strong {
-        font-weight: 600;
-        font-size: 0.92rem;
-        color: white;
-      }
-      .footer-grid p {
-        font-size: 0.83rem;
-        margin-top: 10px;
-      }
-      .footer-grid > div:last-child {
-        display: flex;
-        gap: 24px;
-        align-items: center;
-        font-size: 0.85rem;
-      }
-      .footer-grid a:hover {
-        color: white;
-      }
-      .contact-section {
-        min-height: 430px;
-      }
-      .contact-section .page-title {
-        font-size: 3.3rem;
-      }
-      @media (min-width: 1101px) {
-        .menu-toggle {
-          display: none;
-        }
-        .js nav {
-          display: flex;
-        }
-      }
-      @media (max-width: 1100px) {
-        .header-inner {
-          flex-wrap: wrap;
-          min-height: 82px;
-          padding-block: 14px;
-        }
-        .menu-toggle:not([hidden]) {
-          display: block;
-        }
-        nav {
-          width: 100%;
-          flex-wrap: wrap;
-          gap: 12px 23px;
-          padding: 7px 0;
-        }
-        .js nav {
-          display: none;
-        }
-        .js nav.is-open {
-          display: flex;
-        }
-        .brand-name {
-          font-size: 0.82rem;
-        }
-        .service-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-        .service-grid > article:last-child {
-          grid-column: 1/-1;
-        }
-        .cv-layout {
-          gap: 35px;
-          grid-template-columns: 190px 1fr;
-        }
-      }
-      @media (max-width: 700px) {
-        .overview-grid {
-          grid-template-columns: 1fr;
-        }
-        .overview-grid > a + a {
-          border-left: 0;
-          border-top: 1px solid var(--line);
-        }
-        .home-cta {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-        .two-column,
-        .contact-followup,
-        .service-grid {
-          grid-template-columns: 1fr;
-          gap: 35px;
-        }
-        .service-grid > article:last-child {
-          grid-column: auto;
-        }
-        .cv-layout {
-          grid-template-columns: 1fr;
-          padding-block: 30px 45px;
-        }
-        .cv-nav {
-          position: static;
-          border-bottom: 1px solid var(--line);
-          padding-bottom: 20px;
-        }
-        .cv-nav a {
-          display: inline-block;
-          margin-right: 18px;
-        }
-        .cv-actions {
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 12px;
-        }
-        .footer-grid {
-          flex-direction: column;
-        }
-        .footer-grid > div:last-child {
-          flex-wrap: wrap;
-          gap: 18px;
-        }
-        .page-intro {
-          padding-block: 40px;
-        }
-        .page-description {
-          font-size: 1rem;
-        }
-        .contact-section .page-title {
-          font-size: 2.7rem;
-        }
-      }
-      @media print {
-        .site-header,
-        footer,
-        .cv-actions,
-        .cv-nav,
-        .skip-link {
-          display: none !important;
-        }
-        .cv-layout {
-          display: block;
-          padding: 0;
-        }
-        .page-intro {
-          padding: 0 0 18px;
-          background: white;
-          border: 0;
-        }
-        .page-intro .eyebrow {
-          margin-bottom: 10px;
-        }
-        .page-intro h1 {
-          font-size: 28pt;
-        }
-        .page-description {
-          font-size: 11pt;
-        }
-        .cv-section {
-          margin: 0 0 20px;
-          padding: 0 0 12px;
-        }
-        .cv-section h2 {
-          font-size: 16pt;
-          break-after: avoid;
-        }
-        .cv-section h3 {
-          break-after: avoid;
-        }
-        .cv-bibliography li {
-          break-inside: avoid;
-        }
-        .cv-section p,
-        .cv-section li {
-          color: #222;
-        }
-        .cv-section > ol:not(.cv-bibliography) li {
-          break-inside: avoid;
-        }
-      }
-    </style>
-
-    <style>
-      html.lenis,
-      html.lenis body {
-        height: auto;
-      }
-
-      .lenis:not(.lenis-autoToggle).lenis-stopped {
-        overflow: clip;
-      }
-
-      .lenis [data-lenis-prevent],
-      .lenis [data-lenis-prevent-wheel],
-      .lenis [data-lenis-prevent-touch],
-      .lenis [data-lenis-prevent-vertical],
-      .lenis [data-lenis-prevent-horizontal] {
-        overscroll-behavior: contain;
-      }
-
-      .lenis.lenis-smooth iframe {
-        pointer-events: none;
-      }
-
-      .lenis.lenis-autoToggle {
-        transition-property: overflow;
-        transition-duration: 1ms;
-        transition-behavior: allow-discrete;
-      }
-
-      /* Avoid competing native and Lenis smoothing. */
-      html.lenis,
-      html.lenis body {
-        scroll-behavior: auto !important;
-      }
-      @media print {
-        html.lenis,
-        html.lenis body {
-          height: auto !important;
-          overflow: visible !important;
-        }
-                        .nav-contact {
-    border-left: 0;
-    padding-left: 0;
-  }
-    .nav-contact {
-    padding-left: 17px;
-  }
-  .nav-contact {
-  border-left: 1px solid var(--line);
-  padding-left: 25px;
-}
-      }
-    </style>
-    <style>
-      /* Personal academic identity */
-      .brand-mark {
-        letter-spacing: -0.04em;
-        font-size: 1.15rem;
-        min-width: 43px;
-        justify-content: center;
-      }
-      .brand-name {
-        font-size: 0.82rem;
-        line-height: 1.4;
-      }
-      .brand-name strong {
-        font-size: 0.72rem;
-        color: var(--muted);
-        font-weight: 500;
-      }
-      .hero h1 {
-        font-size: clamp(2.8rem, 4.8vw, 4.25rem);
-      }
-      .hero .group-affiliation {
-        font-size: 0.88rem;
-        color: var(--muted);
-        margin-top: 18px;
-        max-width: 560px;
-      }
-      .group-affiliation strong {
-        font-weight: 600;
-        color: var(--ink);
-      }
-      @media (max-width: 600px) {
-        .brand-name {
-          font-size: 0.67rem;
-        }
-        .brand-name strong {
-          font-size: 0.64rem;
-        }
-        .brand-mark {
-          font-size: 0.9rem;
-          min-width: 34px;
-          padding: 5px;
-        }
-        .hero h1 {
-          font-size: clamp(2.55rem, 9.4vw, 3.5rem);
-        }
-        .hero .group-affiliation {
-          font-size: 0.85rem;
-        }
-      }
-    </style>
-  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../assets/site.css"><script src="../assets/site.js" defer></script></head>
-  <body id="top">
     
-    <a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="container header-inner"><a class="brand" href="../" aria-label="Dr. Muhammad Shahid Iqbal Malik home"><span class="brand-mark" aria-hidden="true">MSI</span><span class="brand-name"><strong>Dr. Shahid Iqbal Malik</strong><br><small>Associate Professor · PAF-IAST</small></span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" hidden>Menu <span aria-hidden="true">☰</span></button><nav id="main-nav" aria-label="Main navigation"><a href="../">Home</a><a href="../research/" aria-current="page">Research</a><a href="../publications/">Publications</a><a href="../lab/">MMX Lab</a><a href="../teaching/">Teaching</a><a href="../service/">Service</a><a href="../cv/">CV</a><a href="../contact/" class="nav-contact">Contact ↗</a></nav></div></header>
+    
+      <link rel="stylesheet" href="../assets/site.css" />
+    <script src="../assets/site.js" defer></script>
+  </head>
+  <body>
+    <!-- Save as research/index.html in the existing GitHub Pages website. Styles, filters and Lenis are embedded; no separate assets are required. Content is based on the CV supplied in October 2026 and the supplied MMX Lab description. Publication years follow the CV; linked publisher records may distinguish online and issue years. Research questions and summaries are editorial descriptions. -->
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a
+          class="brand"
+          href="../"
+          aria-label="Dr. Muhammad Shahid Iqbal Malik home"
+          ><span class="brand-mark" aria-hidden="true">MSI</span
+          ><span class="brand-name"
+            ><strong>M. Shahid Iqbal Malik</strong></span
+          ></a
+        ><button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="main-nav"
+          hidden
+        >
+          Menu <span aria-hidden="true">☰</span>
+        </button>
+        <nav id="main-nav" aria-label="Main navigation">
+          <a href="../">Home</a
+          ><a href="../research/" aria-current="page">Research</a
+          ><a href="../publications/">Publications</a><a href="../lab/">MMX Lab</a
+          ><a href="../teaching/">Teaching</a><a href="../service/">Service</a
+          ><a href="../cv/">CV</a
+          >
+          <a href="mailto:shahid.msimalik@gmail.com" class="nav-contact">Contact ↗</a>
+        </nav>
+      </div>
+    </header>
     <main id="main">
-      <section class="section" id="research" aria-labelledby="research-title">
-        <div class="container">
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow">Research</p>
-              <h1 class="page-title" id="research-title">
-                AI across languages<br />and modalities.
-              </h1>
-            </div>
-            <p>
-              My research spans five connected directions, with a focus on
-              language understanding, interpretability, and real-world use.
-            </p>
+      <section class="hero" aria-labelledby="vision-title">
+        <div class="container hero-grid">
+          <div>
+            <p class="eyebrow">Research vision</p>
+            <h1 id="vision-title">
+              Explainable AI<br />across languages<br />and modalities
+            </h1>
           </div>
-          <div class="research-grid">
-            <article class="research-card">
-              <span class="card-index">01</span>
-              <h3>Multilingual NLP</h3>
-              <p>
-                Learning across languages through cross-lingual transfer,
-                multilingual representations, and transformer-based text
-                understanding.
-              </p>
-              <p class="card-keywords">
-                Cross-lingual transfer · Language understanding
-              </p>
-            </article>
-            <article class="research-card">
-              <span class="card-index">02</span>
-              <h3>Low-resource languages</h3>
-              <p>
-                Developing language technologies for Urdu and other
-                under-resourced settings, including hate speech, threats, and
-                violence-incitation detection.
-              </p>
-              <p class="card-keywords">Urdu NLP · Data and evaluation</p>
-            </article>
-            <article class="research-card">
-              <span class="card-index">03</span>
-              <h3>Social Media Analytics</h3>
-              <p>
-                Understanding online discourse through propaganda and rumour
-                detection, hope-speech analysis, and review helpfulness
-                prediction.
-              </p>
-              <p class="card-keywords">
-                Online discourse · Socially relevant AI
-              </p>
-            </article>
-            <article class="research-card">
-              <span class="card-index">04</span>
-              <h3>Multimodal AI</h3>
-              <p>
-                Exploring text and visual information together for language
-                analytics, cross-modal learning, and interpretable social-media
-                analysis.
-              </p>
-              <p class="card-keywords">
-                Cross-modal learning · Multimodal classification
-              </p>
-            </article>
-            <article class="research-card">
-              <span class="card-index">05</span>
-              <h3>Large Language Models</h3>
-              <p>
-                Investigating model fine-tuning, prompting, knowledge infusion,
-                and text detoxification for low-resource language applications.
-              </p>
-              <p class="card-keywords">
-                Model adaptation · Text detoxification
-              </p>
-            </article>
-            <aside class="research-note">
-              <p class="eyebrow">A shared principle</p>
-              <h3>Interpretable<br />AI systems.</h3>
-              <p>
-                Explainability and trustworthiness run across my research, from
-                interpretable predictions to analysis with SHAP, LIME, and
-                attention.
-              </p>
-              <a href="../publications/"
-                >Read the research <span aria-hidden="true">↗</span></a
-              >
-            </aside>
+          <div class="hero-copy">
+            <p>
+              My research focuses on the intersection of cross-lingual multimodal deep learning, knowledge infusion, and AI explainability. I develop interpretable transformer architectures designed for low-resource languages and high-impact social NLP tasks with a primary emphasis on complex scripts like Nastaliq Urdu. By integrating external knowledge and analyzing visual-linguistic representations, my goal is to advance model interpretability and ensure transparent decision-making in socially sensitive applications.
+            </p>
+            <!-- <p>
+              I combine transformer architectures, knowledge infusion and
+              interpretable representations to study how models work and how
+              their decisions can be examined.
+            </p> -->
+            <div class="hero-links">
+              <a
+                class="text-link"
+                href="https://scholar.google.com/citations?user=S2JLYhMAAAAJ&amp;hl=en"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Google Scholar ↗</a
+              ><a class="text-link" href="#strands">Explore my research ↓</a>
+            </div>
           </div>
         </div>
       </section>
-    <div class="container" style="margin-bottom:60px"><p class="mmx-lab-note">Explore <a href="../lab/">MMX Lab - Multilingual, Multimodal and Explainable AI ↗</a>, led by Dr. Malik.</p></div></main>
-    <footer><div class="container footer-grid"><div><strong>Dr. Muhammad Shahid Iqbal Malik</strong><p>Associate Professor · Computer Science<br>PAF-IAST · Haripur, Pakistan</p></div><div><a href="../lab/">MMX Lab ↗</a><a href="https://scholar.google.com/citations?user=S2JLYhMAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a><a href="../cv/">CV</a><a href="../contact/">Contact</a></div></div><div class="container footer-inner"><p>© <span id="year">2026</span> Dr. Muhammad Shahid Iqbal Malik</p><a href="#top">Back to top ↑</a></div></footer>
-    
-    <!-- Lenis 1.3.26, MIT license: embedded for offline use. -->
+      <!-- <div class="container">
+        <nav class="jump-links" aria-label="On this page">
+          <span>On this page</span><a href="#programme">Programme</a
+          ><a href="#strands">Research strands</a
+          ><a href="#projects">Funded projects</a
+          ><a href="#directions">Current directions</a
+          ><a href="#publications">Publications</a>
+        </nav>
+      </div> -->
+      <section class="section1" id="programme" aria-labelledby="programme-title">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">A connected research agenda</p>
+              <h2 id="programme-title">Research programme</h2>
+            </div>
+            <!-- <p>
+              Language understanding, interpretable modelling and applied
+              systems form a connected programme of research.
+            </p> -->
+          </div>
+          <div class="programme">
+            <!-- <article>
+              <span class="number">01</span>
+              <h3>Language & representation</h3>
+              <p>
+                How can multilingual and cross-lingual models understand
+                language when data, scripts and contexts vary?
+              </p>
+            </article> -->
+            <article>
+              <span class="number">01</span>
+              <h3>Large Language Models</h3>
+              <p>
+                How can fine-tuning, prompt engineering and knowledge infusion adapt
+                large language models for low-resource language understanding,
+                generation and explainable text detoxification?
+              </p>
+            </article>
+            <article>
+              <span class="number">02</span>
+              <h3>Explainability & trust</h3>
+              <p>
+                How can we understand model predictions through semantic
+                structure, attention and post-hoc explanations?
+              </p>
+            </article>
+            <article>
+              <span class="number">03</span>
+              <h3>Multimodal applications</h3>
+              <p>
+                How can language and cross-modal learning support
+                harmful-content detection, mental-health research and practical
+                decision-making?
+              </p>
+            </article>
+          </div>
+          <p class="evidence">
+            Recent work:
+            <a
+              href="https://doi.org/10.1016/j.asoc.2026.115679"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Two-level violence incitation detection in Urdu · Applied Soft
+              Computing, 2026 <span aria-hidden="true">↗</span></a
+            >
+          </p>
+        </div>
+      </section>
+      <section
+        class="section strands-section"
+        id="strands"
+        aria-labelledby="strands-title"
+      >
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Established research</p>
+              <h2 id="strands-title">Research strands</h2>
+            </div>
+            <a class="text-link" href="mailto:shahid.msimalik@gmail.com"
+              >Discuss a research collaboration →</a
+            >
+          </div>
+          <article class="strand">
+            <div class="strand-label">
+              <span class="number">01</span>
+              <p class="eyebrow">Research strand</p>
+              <h3>Explainable &amp; trustworthy AI</h3>
+            </div>
+            <div class="strand-content">
+              <h4>Understanding how a model reaches its decision.</h4>
+              <p>
+                I study explanations for language and machine-learning models
+                through LIME, SHAP, Grad-CAM, attention analysis and interpretable
+                representations. My work also uses abstract meaning
+                representation graphs and pattern structures to examine
+                threatening language.
+              </p>
+              <dl class="question">
+                <dt>Core question</dt>
+                <dd>
+                  How can model decisions be examined and explained in ways that
+                  are useful to the people who rely on them?
+                </dd>
+              </dl>
+              <div class="selected-links">
+                <span>Selected papers</span
+                ><a
+                  href="https://doi.org/10.1177/1088467X251330977"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >AMR graphs and pattern structures · 2025
+                  <span aria-hidden="true">↗</span></a
+                ><a
+                  href="https://doi.org/10.1007/s13278-024-01389-5"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >DeepThreatExplainer · 2024
+                  <span aria-hidden="true">↗</span></a
+                >
+              </div>
+            </div>
+          </article>
+          <article class="strand">
+            <div class="strand-label">
+              <span class="number">02</span>
+              <p class="eyebrow">Research strand</p>
+              <h3>Multilingual &amp; low-resource NLP</h3>
+            </div>
+            <div class="strand-content">
+              <h4>Language technology that works beyond English.</h4>
+              <p>
+                My research investigates cross-lingual transfer, multilingual
+                learning and contextual representations for under-resourced
+                languages. A particular focus is Nastaliq Urdu: detecting hate
+                speech, identifying target communities, and modelling
+                threatening, offensive and hope-related expressions.
+              </p>
+              <dl class="question">
+                <dt>Core question</dt>
+                <dd>
+                  Which representations and transfer strategies support reliable
+                  language understanding when labelled resources are limited?
+                </dd>
+              </dl>
+              <div class="selected-links">
+                <span>Selected papers</span
+                ><a
+                  href="https://doi.org/10.1109/ACCESS.2024.3444188"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Nastaliq Urdu hate speech · 2024
+                  <span aria-hidden="true">↗</span></a
+                ><a
+                  href="https://doi.org/10.1109/ACCESS.2023.3320062"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Multilingual threatening text · 2023
+                  <span aria-hidden="true">↗</span></a
+                ><a
+                  href="https://doi.org/10.1016/j.jksuci.2023.101736"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Multilingual hope speech · 2023
+                  <span aria-hidden="true">↗</span></a
+                >
+              </div>
+            </div>
+          </article>
+          <!-- <article class="strand">
+            <div class="strand-label">
+              <span class="number">03</span>
+              <p class="eyebrow">Research strand</p>
+              <h3>Language models &amp; social media</h3>
+            </div>
+            <div class="strand-content">
+              <h4>From harmful-content detection to safer language.</h4>
+              <p>
+                I develop and evaluate transformer-based systems for threatening
+                content, violence incitation, propaganda and other social-media
+                analytics tasks. Current supervised research extends this work
+                to knowledge-infused models, explainable text detoxification and
+                multimodal hate-speech detection.
+              </p>
+              <dl class="question">
+                <dt>Core question</dt>
+                <dd>
+                  How can language models recognise harmful content and its
+                  targets while making their reasoning inspectable?
+                </dd>
+              </dl>
+              <div class="selected-links">
+                <span>Selected papers</span
+                ><a
+                  href="https://doi.org/10.1016/j.asoc.2026.115679"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Explainable violence incitation · 2026
+                  <span aria-hidden="true">↗</span></a
+                ><a
+                  href="https://doi.org/10.1016/j.jksuci.2023.101606"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Urdu-BERT and target identification · 2023
+                  <span aria-hidden="true">↗</span></a
+                ><a
+                  href="https://doi.org/10.7717/peerj-cs.1248"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Propaganda detection · 2023
+                  <span aria-hidden="true">↗</span></a
+                >
+              </div>
+            </div>
+          </article> -->
+          <article class="strand">
+            <div class="strand-label">
+              <span class="number">03</span>
+              <p class="eyebrow">Research strand</p>
+              <h3>Large Language Models</h3>
+            </div>
+
+            <div class="strand-content">
+              <h4>Adapting language models for low-resource languages.</h4>
+
+              <p>
+                My current research explores large language models through fine-tuning,
+                prompt engineering and knowledge infusion, with particular attention
+                to low-resource languages and Nastaliq Urdu. Current supervised work
+                includes explainable text detoxification. This direction builds on my
+                published research using fine-tuned transformer models for threatening
+                content, propaganda and multilingual hope-speech detection.
+              </p>
+
+              <dl class="question">
+                <dt>Core question</dt>
+                <dd>
+                  How can large language models be adapted to low-resource languages
+                  while preserving meaning, reducing harmful content and making their
+                  outputs easier to evaluate and explain?
+                </dd>
+              </dl>
+
+              <div class="selected-links">
+                <span>Related transformer publications</span>
+
+                <a
+                  href="https://doi.org/10.1016/j.jksuci.2023.101606"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Urdu-BERT for threatening content · 2023
+                  <span aria-hidden="true">↗</span>
+                </a>
+
+                <a
+                  href="https://doi.org/10.1016/j.jksuci.2023.101736"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  RoBERTa for multilingual hope speech · 2023
+                  <span aria-hidden="true">↗</span>
+                </a>
+
+                <a
+                  href="https://doi.org/10.7717/peerj-cs.1248"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  BERT for propaganda detection · 2023
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="strand">
+            <div class="strand-label">
+              <span class="number">04</span>
+              <p class="eyebrow">Research strand</p>
+              <h3>Multimodal &amp; applied AI</h3>
+            </div>
+            <div class="strand-content">
+              <h4>Models connected to practical decisions.</h4>
+              <p>
+                My applied work covers infrastructure and human damage
+                assessment, electronic-product defect identification, review
+                helpfulness, fraud detection and medical-query classification.
+                Current supervised directions combine language and multimodal
+                learning for mental-health signals and implicit or explicit hate
+                speech.
+              </p>
+              <dl class="question">
+                <dt>Core question</dt>
+                <dd>
+                  How can language, contextual and cross-modal signals support
+                  useful and explainable systems for real-world tasks?
+                </dd>
+              </dl>
+              <div class="selected-links">
+                <span>Selected papers</span
+                ><a
+                  href="https://doi.org/10.7717/peerj-cs.1859"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Disaster damage assessment · 2024
+                  <span aria-hidden="true">↗</span></a
+                ><a
+                  href="https://doi.org/10.1016/j.eswa.2023.120236"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Cell-phone defect identification · 2023
+                  <span aria-hidden="true">↗</span></a
+                ><a
+                  href="https://doi.org/10.1007/s10115-023-02020-3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Review helpfulness with ensembles · 2023
+                  <span aria-hidden="true">↗</span></a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section
+        class="section funding-section"
+        id="projects"
+        aria-labelledby="projects-title"
+      >
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Funded research</p>
+              <h2 id="projects-title">Projects & programmes</h2>
+            </div>
+            <!-- <p>
+              Four externally funded projects as PI, supervisor or Co-PI,
+              supporting explainable language AI and student-built applications.
+            </p> -->
+          </div>
+          <!-- <div class="funding-totals">
+            <div>
+              <p>HSE research project</p>
+              <strong>RUB 4 million</strong
+              ><small>One project · Co-PI · 2022–2024</small>
+            </div>
+            <div>
+              <p>Ignite–NGIRI awards</p>
+              <strong>PKR 245,000</strong
+              ><small>Combined total · Three awards · 2019–2022</small>
+            </div>
+          </div> -->
+          <div class="funding-rows">
+            <article class="funding-row" aria-labelledby="funding-project-1">
+              <div class="funding-award">
+                <div class="funding-identity">
+                  <span class="funding-wordmark funding-wordmark--hse"
+                    >HSE <span>UNIVERSITY</span></span
+                  >
+                </div>
+                <p class="funding-label">Funding</p>
+                <p class="funding-value">RUB 4 million</p>
+                <p class="funding-award-name">HSE research project</p>
+                <p class="funding-role">Co-Principal Investigator</p>
+                <p class="funding-value-note">Total project award</p>
+              </div>
+              <div class="funding-details">
+                <div class="funding-meta">
+                  <span>Explainable language AI</span><span>2022–2024</span>
+                </div>
+                <h3 id="funding-project-1">
+                  High-Performance Explainable Threatening Speech Detection
+                  System
+                </h3>
+                <p class="funding-description">
+                  Research on explainable threatening-speech detection at the
+                  National Research University Higher School of Economics,
+                  Moscow.
+                </p>
+                <dl class="funding-facts">
+                  <div>
+                    <dt>Funder</dt>
+                    <dd>National Research University HSE, Moscow</dd>
+                  </div>
+                  <div>
+                    <dt>Programme</dt>
+                    <dd>Explainable language AI research</dd>
+                  </div>
+                </dl>
+              </div>
+              <aside
+                class="funding-related"
+                aria-label="Related research for High-Performance Explainable Threatening Speech Detection System"
+              >
+                <div class="funding-related-head">
+                  <p class="funding-label">Related work</p>
+                  <span>2 related papers</span>
+                </div>
+                <p class="funding-related-copy">
+                  Research in this area includes DeepThreatExplainer and
+                  approaches that use abstract meaning representation graphs and
+                  pattern structures to explain threatening-tweet predictions.
+                </p>
+                <div class="funding-related-links">
+                  <a
+                    href="https://doi.org/10.1007/s13278-024-01389-5"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >DeepThreatExplainer <span aria-hidden="true">↗</span></a
+                  ><a
+                    href="https://doi.org/10.1177/1088467X251330977"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >AMR and pattern-structure explanations
+                    <span aria-hidden="true">↗</span></a
+                  >
+                </div>
+              </aside>
+            </article>
+            <article class="funding-row" aria-labelledby="funding-project-2">
+              <div class="funding-award">
+                <div class="funding-identity">
+                  <span class="funding-wordmark funding-wordmark--ignite"
+                    >Ignite<span>National Technology Fund</span></span
+                  >
+                </div>
+                <p class="funding-label">Funding</p>
+                <p class="funding-value">PKR 245,000</p>
+                <p class="funding-award-name">NGIRI · Student research award</p>
+                <p class="funding-role">Principal Investigator / Supervisor</p>
+                <p class="funding-value-note">Combined value of three awards</p>
+              </div>
+              <div class="funding-details">
+                <div class="funding-meta">
+                  <span>NLP &amp; review analysis</span><span>2019–2020</span>
+                </div>
+                <h3 id="funding-project-2">
+                  Review Helpfulness Prediction Tool using NLP
+                </h3>
+                <p class="funding-description">
+                  A funded student project focused on predicting whether online
+                  reviews provide useful information for readers.
+                </p>
+                <dl class="funding-facts">
+                  <div>
+                    <dt>Funder</dt>
+                    <dd>Ignite–National Technology Fund · NGIRI</dd>
+                  </div>
+                  <div>
+                    <dt>Programme</dt>
+                    <dd>National Grassroots ICT Research Initiative (NGIRI)</dd>
+                  </div>
+                </dl>
+              </div>
+              <aside
+                class="funding-related"
+                aria-label="Related research for Review Helpfulness Prediction Tool using NLP"
+              >
+                <div class="funding-related-head">
+                  <p class="funding-label">Related work</p>
+                  <span>1 related paper</span>
+                </div>
+                <p class="funding-related-copy">
+                  Related work examines review and reviewer characteristics that
+                  contribute to predicting whether online reviews are helpful.
+                </p>
+                <div class="funding-related-links">
+                  <a
+                    href="https://doi.org/10.1007/s00500-020-04767-1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Review and reviewer characteristics
+                    <span aria-hidden="true">↗</span></a
+                  >
+                </div>
+              </aside>
+            </article>
+            <article class="funding-row" aria-labelledby="funding-project-3">
+              <div class="funding-award">
+                <div class="funding-identity">
+                  <span class="funding-wordmark funding-wordmark--ignite"
+                    >Ignite<span>National Technology Fund</span></span
+                  >
+                </div>
+                <!-- <p class="funding-label">Funding</p>
+                <p class="funding-value">PKR 245,000</p>
+                <p class="funding-award-name">NGIRI · Student research award</p>
+                <p class="funding-role">PI / Supervisor</p>
+                <p class="funding-value-note">Combined value of three awards</p> -->
+              </div>
+              <div class="funding-details">
+                <div class="funding-meta">
+                  <span>Applied language AI</span><span>2020–2021</span>
+                </div>
+                <h3 id="funding-project-3">
+                  Automated Defect Identification for Electronic Products
+                </h3>
+                <p class="funding-description">
+                  A funded student project applying language-processing methods
+                  to identify defective electronic products from review content.
+                </p>
+                <dl class="funding-facts">
+                  <div>
+                    <dt>Funder</dt>
+                    <dd>Ignite–National Technology Fund · NGIRI</dd>
+                  </div>
+                  <div>
+                    <dt>Programme</dt>
+                    <dd>National Grassroots ICT Research Initiative (NGIRI)</dd>
+                  </div>
+                </dl>
+              </div>
+              <aside
+                class="funding-related"
+                aria-label="Related research for Automated Defect Identification for Electronic Products"
+              >
+                <div class="funding-related-head">
+                  <p class="funding-label">Related work</p>
+                  <span>1 related paper</span>
+                </div>
+                <p class="funding-related-copy">
+                  Related work uses online reviews to identify defective
+                  products and support product-quality assessment.
+                </p>
+                <div class="funding-related-links">
+                  <a
+                    href="https://doi.org/10.1007/s10660-021-09495-8"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Defective products using online reviews
+                    <span aria-hidden="true">↗</span></a
+                  >
+                </div>
+              </aside>
+            </article>
+            <article class="funding-row" aria-labelledby="funding-project-4">
+              <div class="funding-award">
+                <div class="funding-identity">
+                  <span class="funding-wordmark funding-wordmark--ignite"
+                    >Ignite<span>National Technology Fund</span></span
+                  >
+                </div>
+                <!-- <p class="funding-label">Funding</p>
+                <p class="funding-value">PKR 245,000</p>
+                <p class="funding-award-name">NGIRI · Student research award</p>
+                <p class="funding-role">PI / Supervisor</p>
+                <p class="funding-value-note">Combined value of three awards</p> -->
+              </div>
+              <div class="funding-details">
+                <div class="funding-meta">
+                  <span>Low-resource NLP</span><span>2021–2022</span>
+                </div>
+                <h3 id="funding-project-4">
+                  Abusive Content Detection System in Urdu
+                </h3>
+                <p class="funding-description">
+                  A funded student project developing abusive-content detection
+                  for Urdu, with attention to language-specific textual signals.
+                </p>
+                <dl class="funding-facts">
+                  <div>
+                    <dt>Funder</dt>
+                    <dd>Ignite–National Technology Fund · NGIRI</dd>
+                  </div>
+                  <div>
+                    <dt>Programme</dt>
+                    <dd>National Grassroots ICT Research Initiative (NGIRI)</dd>
+                  </div>
+                </dl>
+              </div>
+              <aside
+                class="funding-related"
+                aria-label="Related research for Abusive Content Detection System in Urdu"
+              >
+                <div class="funding-related-head">
+                  <p class="funding-label">Related work</p>
+                  <span>1 related paper</span>
+                </div>
+                <p class="funding-related-copy">
+                  Related work investigates semantic and embedding-based
+                  approaches to identifying offensive language in Urdu.
+                </p>
+                <div class="funding-related-links">
+                  <a
+                    href="https://doi.org/10.7717/peerj-cs.1169"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Offensive language identification in Urdu
+                    <span aria-hidden="true">↗</span></a
+                  >
+                </div>
+              </aside>
+            </article>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+    <footer>
+      <div class="container footer-grid">
+        <div>
+          <strong>Muhammad Shahid Iqbal Malik</strong>
+          <p>
+            Associate Professor · Multimodal & Multilingual AI<br />PAF-IAST · Haripur,
+            Pakistan
+          </p>
+        </div>
+        <div>
+
+          <a
+            href="https://scholar.google.com/citations?user=S2JLYhMAAAAJ&amp;hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Google Scholar ↗</a
+          >
+          <a
+            href="https://www.linkedin.com/in/muhammad-shahid-iqbal-malik-b5541316/?isSelfProfile=false"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn ↗</a
+          >
+          <a
+            href="https://orcid.org/0000-0001-8396-3344"
+            target="_blank"
+            rel="noopener noreferrer"
+            >ORCID ↗</a
+          >
+
+          <a class="email-link" href="mailto:shahid.msimalik@gmail.com"
+              ><u>shahid.msimalik@gmail.com</u> <span aria-hidden="true">↗</span></a
+            >
+        </div>
+      </div>
+      <div class="container footer-inner">
+        <p>© <span id="year">2026</span> Muhammad Shahid Iqbal Malik</p>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </footer>
+    <!-- Lenis, MIT license. Bundled to preserve smooth scrolling without a CDN dependency. -->
     
     
   </body>
