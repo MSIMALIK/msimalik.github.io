@@ -5684,6 +5684,71 @@ footer:where(html[data-page="research"], html[data-page="research"] *):not(:wher
 
 }
 
+html[data-page="teaching"] .tch-course-lists {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(2.5rem, 6vw, 6rem);
+  margin-top: 2.5rem;
+}
+
+html[data-page="teaching"] .tch-course-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 2px solid var(--plum, #302a3b);
+}
+
+html[data-page="teaching"] .tch-course-heading h3 {
+  margin: 0;
+  color: var(--plum, #302a3b);
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+
+html[data-page="teaching"] .tch-course-heading > span {
+  color: var(--orange, #b94e2e);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+html[data-page="teaching"] .tch-course-list {
+  margin: 0;
+  padding-left: 2.5rem;
+  list-style-type: decimal-leading-zero;
+}
+
+html[data-page="teaching"] .tch-course-list li {
+  margin: 0;
+  padding: 1.15rem 0 1.15rem 0.5rem;
+  border-bottom: 1px solid var(--line, #dedad3);
+  color: var(--plum, #302a3b);
+  font-size: clamp(0.98rem, 1.25vw, 1.1rem);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+html[data-page="teaching"] .tch-course-list li::marker {
+  color: var(--orange, #b94e2e);
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 700px) {
+  html[data-page="teaching"] .tch-course-lists {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.75rem;
+  }
+}
+
 /* Funding section only: full-width rows with award, project and related-work columns. */
 #projects.funding-section:where(html[data-page="research"], html[data-page="research"] *):not(:where(.site-header, .site-header *, body > footer, body > footer *)) {
         background: var(--navy);
@@ -5882,7 +5947,7 @@ footer:where(html[data-page="research"], html[data-page="research"] *):not(:wher
 #projects .funding-related:where(html[data-page="research"], html[data-page="research"] *):not(:where(.site-header, .site-header *, body > footer, body > footer *)) {
         border-left: 1px solid #445971;
         padding-left: 38px;
-        display: flex;
+        /* display: flex; */
         flex-direction: column;
         align-self: stretch;
       }
@@ -5911,8 +5976,8 @@ footer:where(html[data-page="research"], html[data-page="research"] *):not(:wher
       }
 #projects .funding-related-links:where(html[data-page="research"], html[data-page="research"] *):not(:where(.site-header, .site-header *, body > footer, body > footer *)) {
         margin-top: auto;
-        border-top: 1px solid #445971;
-        padding-top: 23px;
+        /* border-top: 1px solid #445971; */
+        /* padding-top: 23px; */
         display: flex;
         flex-direction: column;
         gap: 13px;
@@ -7701,3 +7766,5 @@ html[data-page="lab"] .mmx-former-members-list li::marker {
     color: #302a3b;
   }
 }
+
+
