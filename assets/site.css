@@ -2594,7 +2594,7 @@ footer:where(html:is([data-page="service"]), html:is([data-page="service"]) *):n
         padding: 0.8rem 1.2rem;
         margin-top: 1.8rem;
         border: 1px solid #17324d;
-        background: #17324d;
+        background: var(--navy);
         color: white;
         font-size: 0.85rem;
         font-weight: 700;
@@ -3161,7 +3161,7 @@ p + p:where(html:not([data-page="research"]), html:not([data-page="research"]) *
 }
 .mmx-section:where(html:not([data-page="research"]), html:not([data-page="research"]) *):not(:where(.site-header, .site-header *, body > footer, body > footer *)),
 .section:where(html:not([data-page="research"]), html:not([data-page="research"]) *):not(:where(.site-header, .site-header *, body > footer, body > footer *)) {
-  padding-block: 96px;
+  padding-block: 40px;
 }
 .mmx-section-head:where(html:not([data-page="research"]), html:not([data-page="research"]) *):not(:where(.site-header, .site-header *, body > footer, body > footer *)) {
   display: flex;
@@ -4342,7 +4342,7 @@ html.lenis body:where(html:not([data-page="research"]), html:not([data-page="res
         font-weight: 400;
         line-height: 0.98;
         letter-spacing: -0.055em;
-        color: #192735;
+        color: var(--navy);
       }
 #publications .pub-intro > p:where(html[data-page="publications"], html[data-page="publications"] *):not(:where(.site-header, .site-header *, body > footer, body > footer *)) {
         font-size: 20px;
@@ -4395,8 +4395,8 @@ html.lenis body:where(html:not([data-page="research"]), html:not([data-page="res
         border-color: #9aabae;
       }
 #publications .pub-filter.is-active:where(html[data-page="publications"], html[data-page="publications"] *):not(:where(.site-header, .site-header *, body > footer, body > footer *)) {
-        background: #18314b;
-        border-color: #18314b;
+        background: var(--navy);
+        border-color: var(--navy);
         color: #fff;
         font-weight: 650;
       }
@@ -4651,6 +4651,7 @@ html.lenis body:where(html:not([data-page="research"]), html:not([data-page="res
         --muted: #5e6f7c;
         --accent: #b44c30;
         --pale: #eeebe5;
+        --navy: #302a3b;
         --line: #dcd8cf;
         --dark: #192e3f;
         --max: 1220px;
@@ -4665,7 +4666,7 @@ html:where(html[data-page="research"], html[data-page="research"] *):not(:where(
 body:where(html[data-page="research"], html[data-page="research"] *):not(:where(.site-header, .site-header *, body > footer, body > footer *)) {
         margin: 0;
         background: var(--paper);
-        color: var(--ink);
+        color: var(--navy);
         font:
           16px/1.7 system-ui,
           -apple-system,
@@ -4687,7 +4688,7 @@ button:focus-visible:where(html[data-page="research"], html[data-page="research"
         outline: 2px solid var(--accent);
         outline-offset: 5px;
       }
-h1:where(html[data-page="research"], html[data-page="research"] *):not(:where(.site-header, .site-header *, body > footer, body > footer *)),
+h1:where(html[data-page="research"], h#projects.funding-section:where(html[data-page="research"], html[data-page="research"] *):not(:where(.site-header, .site-header *, body > footer, body > footer *))tml[data-page="research"] *):not(:where(.site-header, .site-header *, body > footer, body > footer *)),
 h2:where(html[data-page="research"], html[data-page="research"] *):not(:where(.site-header, .site-header *, body > footer, body > footer *)),
 h3:where(html[data-page="research"], html[data-page="research"] *):not(:where(.site-header, .site-header *, body > footer, body > footer *)),
 h4:where(html[data-page="research"], html[data-page="research"] *):not(:where(.site-header, .site-header *, body > footer, body > footer *)),
@@ -5685,7 +5686,7 @@ footer:where(html[data-page="research"], html[data-page="research"] *):not(:wher
 
 /* Funding section only: full-width rows with award, project and related-work columns. */
 #projects.funding-section:where(html[data-page="research"], html[data-page="research"] *):not(:where(.site-header, .site-header *, body > footer, body > footer *)) {
-        background: #1b304b;
+        background: var(--navy);
         color: #f7f5f0;
         border-color: #4b5d71;
         padding-block: 72px 64px;
@@ -6175,11 +6176,6 @@ button:where(.site-header, .site-header *, body > footer, body > footer *),
 a:where(.site-header, .site-header *, body > footer, body > footer *) {
   -webkit-tap-highlight-color: transparent;
 }
-
-a:where(body > footer, body > footer *) {
-  color: white;
-}
-
 a:focus-visible:where(.site-header, .site-header *, body > footer, body > footer *),
 button:focus-visible:where(.site-header, .site-header *, body > footer, body > footer *),
 summary:focus-visible:where(.site-header, .site-header *, body > footer, body > footer *) {
@@ -6648,13 +6644,13 @@ footer:where(.site-header, .site-header *, body > footer, body > footer *) {
 .footer-grid:where(.site-header, .site-header *, body > footer, body > footer *) {
   display: flex;
   justify-content: space-between;
+  color: white;
   gap: 40px;
   padding-bottom: 32px;
 }
 .footer-grid strong:where(.site-header, .site-header *, body > footer, body > footer *) {
   font-size: 14px;
   font-weight: 600;
-  color: white;
 }
 .footer-grid p:where(.site-header, .site-header *, body > footer, body > footer *) {
   font-size: 12px;
@@ -7551,3 +7547,157 @@ html.lenis body:where(.site-header, .site-header *, body > footer, body > footer
 :is(#inline-priority, [data-inline-style="home-3"]):is(#inline-priority, [data-inline-style="home-3"]):is(#inline-priority, [data-inline-style="home-3"]) { padding-top: 0 }
 :is(#inline-priority, [data-inline-style="lab-4"]):is(#inline-priority, [data-inline-style="lab-4"]):is(#inline-priority, [data-inline-style="lab-4"]) { padding-top: 0 }
 :is(#inline-priority, [data-inline-style="lab-5"]):is(#inline-priority, [data-inline-style="lab-5"]):is(#inline-priority, [data-inline-style="lab-5"]) { padding-top: 0 }
+
+/* MMX Lab members: coordinated current rows and former-student lists. */
+html[data-page="lab"] .mmx-members-heading {
+  border-top: 4px solid var(--line, #dedad3);
+  border-bottom: 4px solid var(--line, #dedad3);
+  padding-block: 20px;
+  margin-bottom: 42px;
+}
+html[data-page="lab"] .mmx-members-heading h2 {
+  margin: 0;
+  max-width: none;
+  color: var(--navy, #b94e2e);
+  font-size: clamp(2rem, 4.2vw, 3.25rem);
+  line-height: 1.16;
+  font-weight: 650;
+  letter-spacing: -0.035em;
+}
+html[data-page="lab"] .mmx-members-subtitle {
+  display: inline;
+  font-size: clamp(.9rem, 1.8vw, 1.25rem);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  white-space: normal;
+}
+html[data-page="lab"] .mmx-members-group + .mmx-members-group {
+  margin-top: 36px;
+}
+html[data-page="lab"] .mmx-members-group-title {
+  margin: 0 0 16px;
+  color: var(--plum, #302a3b);
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 650;
+  letter-spacing: 0;
+}
+html[data-page="lab"] .mmx-current-members-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+html[data-page="lab"] .mmx-member-row {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line, #dedad3);
+}
+html[data-page="lab"] .mmx-member-row:first-child {
+  border-top: 1px solid var(--line, #dedad3);
+}
+html[data-page="lab"] .mmx-member-initials {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line, #dedad3);
+  border-radius: 50%;
+  color: var(--orange, #b94e2e);
+  background: var(--pale, #eeebe5);
+  font-size: .78rem;
+  font-weight: 650;
+  letter-spacing: .02em;
+}
+html[data-page="lab"] .mmx-member-details h4 {
+  margin: 0;
+  color: var(--plum, #302a3b);
+  font-family: inherit;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  font-weight: 550;
+  letter-spacing: -.02em;
+}
+html[data-page="lab"] .mmx-member-role {
+  padding: 5px 12px;
+  border: 1px solid var(--line, #dedad3);
+  border-radius: 30px;
+  color: var(--muted, #716b75);
+  font-size: .72rem;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+html[data-page="lab"] .mmx-member-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 5px;
+  font-size: .77rem;
+  color: var(--muted, #716b75);
+}
+html[data-page="lab"] .mmx-member-links a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--line, #dedad3);
+}
+html[data-page="lab"] .mmx-member-links a:hover {
+  color: var(--orange, #b94e2e);
+  text-decoration-color: currentColor;
+}
+html[data-page="lab"] .mmx-former-members-list {
+  list-style-type: square;
+  margin: 0;
+  padding-left: 21px;
+  color: var(--ink, #302a3b);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+html[data-page="lab"] .mmx-former-members-list li {
+  padding-left: 3px;
+  margin-bottom: 10px;
+}
+html[data-page="lab"] .mmx-former-members-list li::marker {
+  color: var(--orange, #b94e2e);
+  font-size: .8em;
+}
+@media (max-width: 600px) {
+  html[data-page="lab"] .mmx-members-heading {
+    padding-block: 17px;
+    margin-bottom: 30px;
+  }
+  html[data-page="lab"] .mmx-members-subtitle {
+    display: block;
+    margin-top: 7px;
+  }
+  html[data-page="lab"] .mmx-member-row {
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 4px 13px;
+    padding-block: 18px;
+  }
+  html[data-page="lab"] .mmx-member-initials {
+    width: 38px;
+    height: 38px;
+    grid-row: 1 / span 2;
+  }
+  html[data-page="lab"] .mmx-member-role {
+    grid-column: 2;
+    justify-self: start;
+    margin-top: 5px;
+    padding: 3px 9px;
+  }
+  html[data-page="lab"] .mmx-member-details h4 {
+    font-size: 1rem;
+  }
+}
+@media print {
+  html[data-page="lab"] .mmx-member-row,
+  html[data-page="lab"] .mmx-former-members-list li {
+    break-inside: avoid;
+  }
+  html[data-page="lab"] .mmx-members-heading h2 {
+    color: #302a3b;
+  }
+}
